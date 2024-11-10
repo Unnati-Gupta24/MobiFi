@@ -33,3 +33,60 @@ MobiFi (MBF) is a TRC20 utility token designed to revolutionize the mobile phone
 ### Contract Address
 - Mainnet: [To be added after deployment]
 - Testnet: [To be added after testnet deployment]
+
+
+## Installation
+
+1. Clone the repository<br>
+```
+git clone https://github.com/Unnati-Gupta24/MobiFi.git
+cd MobiFi
+```
+
+2. Install dependencies<br>
+```
+npm install
+```
+
+3. Configure environment variables<br>
+```
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+4. Compile Contracts<br>
+```
+tronbox compile
+```
+
+5. Deploy Contracts Testnet<br>
+```
+tronbox migrate --network shasta
+```
+
+## Integration Guide
+
+### Adding MobiFi to Your Store
+
+```
+const MobiFi = require('@mobifi/contract');
+const contract = new MobiFi('YOUR_CONTRACT_ADDRESS');
+
+// Calculate customer discount
+const discount = await contract.calculateDiscount(customerAddress, purchaseAmount);
+
+// Process referral
+await contract.rewardReferral(referrerAddress, refereeAddress);
+```
+
+## Contributing
+
+1. Fork the repository<br>
+2. Create your feature branch (git checkout -b feature/AmazingFeature)<br>
+3. Commit your changes (git commit -m 'Add some AmazingFeature')<br>
+4. Push to the branch (git push origin feature/AmazingFeature)<br>
+5. Open a Pull Request
+
+## License
+Distributed under the MIT License. See LICENSE for more information.
+
